@@ -62,21 +62,20 @@ class Squirrel(models.Model):
                  default = OTHER,)
 
     specific_location = models.CharField(max_length = 255)
-
-    running = models.NullBooleanField()
-    chasing = models.NullBooleanField()
-    climbing = models.NullBooleanField()
-    eating = models.NullBooleanField()
-    foraging = models.NullBooleanField()
+    running = models.BooleanField()
+    chasing = models.BooleanField()
+    climbing = models.BooleanField()
+    eating = models.BooleanField()
+    foraging = models.BooleanField()
     other_activities = models.CharField(max_length = 255)
-    kuks = models.NullBooleanField()
-    quaas = models.NullBooleanField()
-    moans = models.NullBooleanField()
-    tail_flags = models.NullBooleanField()
-    tail_twitches = models.NullBooleanField()
-    approaches = models.NullBooleanField()
-    indifferent = models.NullBooleanField()
-    runs_from = models.NullBooleanField()
-
+    kuks = models.BooleanField()
+    quaas = models.BooleanField()
+    moans = models.BooleanField()
+    tail_flags = models.BooleanField()
+    tail_twitches = models.BooleanField()
+    approaches = models.BooleanField()
+    indifferent = models.BooleanField()
+    runs_from = models.BooleanField()
+    
     def __str__(self):
         return self.unique_squirrel_id
