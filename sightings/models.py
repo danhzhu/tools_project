@@ -57,7 +57,7 @@ class Squirrel(models.Model):
                        )
 
     location = models.CharField(
-                 max_length = 10,
+                 max_length = 15,
                  choices = location_choices,
                  default = OTHER,)
 
