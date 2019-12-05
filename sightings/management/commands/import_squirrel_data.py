@@ -67,6 +67,8 @@ class Command(BaseCommand):
     
                 squirrel = Squirrel(
                     latitude = latitude,
+                    longitude = longitude,
+                    unique_squirrel_id = unique_squirrel_id,
                     shift = shift,
                     date = date,
                     age = age,
