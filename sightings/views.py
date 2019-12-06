@@ -21,6 +21,22 @@ def edit_squirrels(request, unique_squirrel_id):
         form = SquirrelForm(instance = squirrel)
 
     context = {
-            'form' : form,
+            'form': form,
             }
     return render(request, 'sightings/edit_add.html', context)
+
+def add_squirrel(request):
+    if request.method == 'POST':
+        form = SquirrelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(f'/sightings/')
+    else:
+        form = SquirrelForm()
+        
+    context = {
+            'form': form,
+            'jazz': True,
+            }
+    return render(request, 'sightings/edit_add.html', context)
+
