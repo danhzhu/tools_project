@@ -19,7 +19,7 @@ class Squirrel(models.Model):
               choices = shift_choices,
               default = OTHER,)
 
-    date = models.CharField(max_length = 255)
+    date = models.CharField(max_length = 255, null = True, blank = True)
 
     ADULT = 'adult'
     JUVENILE = 'juvenile'
@@ -61,13 +61,13 @@ class Squirrel(models.Model):
                  choices = location_choices,
                  default = OTHER,)
 
-    specific_location = models.CharField(max_length = 255)
+    specific_location = models.CharField(max_length = 255, null = True, blank = True)
     running = models.BooleanField()
     chasing = models.BooleanField()
     climbing = models.BooleanField()
     eating = models.BooleanField()
     foraging = models.BooleanField()
-    other_activities = models.CharField(max_length = 255)
+    other_activities = models.CharField(max_length = 255, null = True, blank = True)
     kuks = models.BooleanField()
     quaas = models.BooleanField()
     moans = models.BooleanField()
