@@ -5,8 +5,8 @@ class Squirrel(models.Model):
     longitude = models.FloatField()
     unique_squirrel_id = models.CharField(max_length = 255)
 
-    AM = 'am'
-    PM = 'pm'
+    AM = 'AM'
+    PM = 'PM'
     OTHER = ''
 
     shift_choices = ((AM, 'AM'),
@@ -21,8 +21,8 @@ class Squirrel(models.Model):
 
     date = models.CharField(max_length = 255, null = True, blank = True)
 
-    ADULT = 'adult'
-    JUVENILE = 'juvenile'
+    ADULT = 'Adult'
+    JUVENILE = 'Juvenile'
 
     age_choices = ((ADULT, 'Adult'),
                    (JUVENILE, 'Juvenile'),
@@ -32,11 +32,14 @@ class Squirrel(models.Model):
     age = models.CharField(
             max_length = 8,
             choices = age_choices,
-            default = OTHER,)
+            default = OTHER,
+            null = True,
+            blank = True,)
+      
 
-    GRAY = 'gray'
-    CINNAMON = 'cinnamon'
-    BLACK = 'black'
+    GRAY = 'Gray'
+    CINNAMON = 'Cinnamon'
+    BLACK = 'Black'
 
     color_choices = ((GRAY, 'Gray'),
                      (CINNAMON, 'Cinnamon'),
@@ -46,10 +49,12 @@ class Squirrel(models.Model):
     primary_fur_color = models.CharField(
                           max_length = 8,
                           choices = color_choices,
-                          default = OTHER,)
+                          default = OTHER,
+                          null = True,
+                          blank = True,)
 
-    GROUND = 'ground plane'
-    ABOVE = 'above ground'
+    GROUND = 'Ground Plane'
+    ABOVE = 'Above Ground'
 
     location_choices = ((GROUND, 'Ground Plane'),
                         (ABOVE, 'Above Ground'),
@@ -59,7 +64,9 @@ class Squirrel(models.Model):
     location = models.CharField(
                  max_length = 15,
                  choices = location_choices,
-                 default = OTHER,)
+                 default = OTHER,
+                 null = True,
+                 blank = True,)
 
     specific_location = models.CharField(max_length = 255, null = True, blank = True)
     running = models.BooleanField()

@@ -12,11 +12,12 @@ class Command(BaseCommand):
         path = options['path']
         csvfile = open(path, 'w')
         writer = csv.writer(csvfile)
-        writer.writerow(['Longitude', 'Latitude', 'Shift', 'Date',
-            'Age', 'Primary Fur Color', 'Location', 'Specific Location',
-            'Running', 'Chasing', 'Climbing', 'Eating', 'Foraging',
-            'Other Activities', 'Kuks', 'Quaas', 'Moans', 'Tail flags',
-            'Tail twitches', 'Approaches', 'Indifferernt', 'Runs from'])
+        writer.writerow(['Index', 'Longitude','Latitude', 'Unique Squirrel ID',
+            'Shift', 'Date','Age', 'Primary Fur Color', 'Location',
+            'Specific Location', 'Running', 'Chasing', 'Climbing', 
+            'Eating', 'Foraging','Other Activities', 'Kuks', 'Quaas',
+            'Moans', 'Tail flags','Tail twitches', 'Approaches',
+            'Indifferernt', 'Runs from'])
         for obj in Squirrel.objects.all():
             row = []
             for field in Squirrel._meta.fields:
