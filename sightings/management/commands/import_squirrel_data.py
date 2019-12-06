@@ -20,8 +20,8 @@ class Command(BaseCommand):
             data = list(reader)
             
             for item in data:
-                latitude = item['X']
-                longitude = item['Y']
+                latitude = item['Y']
+                longitude = item['X']
                 unique_squirrel_id = item['Unique Squirrel ID']
 
                 if (item['Shift'].lower() in ['am', 'pm']):
