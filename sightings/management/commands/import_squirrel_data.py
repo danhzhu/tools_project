@@ -25,24 +25,24 @@ class Command(BaseCommand):
                 unique_squirrel_id = item['Unique Squirrel ID']
 
                 if (item['Shift'].lower() in ['am', 'pm']):
-                    shift = item['Shift'].lower()
+                    shift = item['Shift'].upper()
                 else:
                     shift = ''
     
                 date = item['Date']
 
                 if (item['Age'].lower() in ['adult', 'juvenile']):
-                    age = item['Age'].lower()
+                    age = item['Age'].lower().capitalize()
                 else:
                     age = ''
 
                 if (item['Primary Fur Color'].lower() in ['black', 'gray', 'cinnamon']):
-                    primary_fur_color = item['Primary Fur Color'].lower()
+                    primary_fur_color = item['Primary Fur Color'].lower().capitalize()
                 else:
                     primary_fur_color = ''
 
                 if (item['Location'].lower() in ['ground plane', 'above ground']):
-                    location = item['Location'].lower()
+                    location = item['Location'].split()[0].capitalize() + ' ' + item['Location'].split()[1].capitalize()
                 else:
                     location = ''
 
