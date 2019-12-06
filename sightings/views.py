@@ -19,7 +19,6 @@ def edit_squirrels(request, unique_squirrel_id):
             return redirect(f'/sightings/{unique_squirrel_id}')
     else:
         form = SquirrelForm(instance = squirrel)
-
     context = {
             'form': form,
             }
@@ -39,4 +38,33 @@ def add_squirrel(request):
             'jazz': True,
             }
     return render(request, 'sightings/edit_add.html', context)
+
+def stats(request):
+    total = Squirrel.objects.count()
+    adult = Squirrel.objects.filter(age = 'adult').count()
+    juvenile = Squirrel.objects.filter(age = 'juvenile').count()
+    gray = Squirrel.objects.filter(primary_fur_color = 'gray').count()
+    cinnamon = Squirrel.objects.filter(primary_fur_color = 'cinnamon').count()
+    black = Squirrel.objects.filter(primary_fur_color = 'black').count()
+    above = Squirrel.objects.filter(location = 'above ground').count()
+    ground = Squirrel.objects.filter(location = 'ground plane').count()
+    running = Squirrel.objects.filter(running = True).count()
+    climbing = Squirrel.objects.filter(climbing = True).count()
+    moans = Squirrel.objects.filter(moans = True).count()
+
+    context = {
+                'total': total,
+                'adult': adult,
+                'juvenile': juvenile,
+                'gray': gray,
+                'cinnamon': cinnamon,
+                'black': black,
+                'above': above,
+                'ground': ground,
+                'running': running,
+                'climbing': climbing,
+                'moans': moans,
+                }
+
+    return render(request, 'sightings/stats.html', context)
 
