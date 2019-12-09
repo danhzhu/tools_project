@@ -2,7 +2,7 @@
 This is a Django based project that keeps track of all the known squirrels in Central Park. 
 Users can easily add, update, and delete squirrel data, view squirrels on map, and know general stats about the squirrels.<br />
 [Link to Server](https://psyched-throne-255421.appspot.com)<br />
-[Linke to Clone](https://github.com/danhzhu/tools_project.git)
+[Link to Clone](https://github.com/danhzhu/tools_project.git)
 
 ## Data Usage
 [2018 Central Park Squirrel Census](https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw)
@@ -27,6 +27,8 @@ A command that exports the data in database into csv file.
   so we randomly mark 50 at onece.
 - *Squirrel ID List* <br />
   - A view that lists all squirrel sightings with links to edit and add sightings.
+  - A button linked to add page
+  - A button linked to stats page
   - Located at: ```/sightings```
 - *Squirrel Details* <br />
   - A view to update a particular sighting by the unique squirrel id
