@@ -1,7 +1,8 @@
 # Squirrel Tracker Django Project
 This is a Django based project that keeps track of all the known squirrels in Central Park. 
 Users can easily add, update, and delete squirrel data, view squirrels on map, and know general stats about the squirrels.<br />
-[Link to Server]()
+[Link to Server](https://psyched-throne-255421.appspot.com)<br />
+[Linke to Clone](https://github.com/danhzhu/tools_project.git)
 
 ## Data Usage
 [2018 Central Park Squirrel Census](https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw)
